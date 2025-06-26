@@ -31,7 +31,7 @@
         "env": {
           "SLACK_BOT_TOKEN": "${SLACK_BOT_TOKEN}",
           "SLACK_TEAM_ID": "${SLACK_TEAM_ID}",
-          "SLACK_CHANNEL_IDS": "C091TJXMC8P"
+          "SLACK_CHANNEL_IDS": "CHANNEL-ID"
         },
         "transport": "stdio"
       },
@@ -45,7 +45,7 @@
         
       ],
       "transport": "sse",
-      "url": "https://mcp.pipedream.net/d05882ca-f5f1-414c-8cf9-b398e1455c73/gmail"
+      "url": "https://mcp.pipedream.net/API-KEY/gmail"
     }
     }
   }
