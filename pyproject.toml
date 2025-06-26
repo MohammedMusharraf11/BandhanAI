@@ -1,0 +1,27 @@
+[project]
+name = "bandhanai"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "faker>=37.3.0",
+    "fastapi>=0.115.13",
+    "gradio>=5.34.2",
+    "ipykernel>=6.29.5",
+    "ipython>=9.3.0",
+    "langchain-core>=0.3.62",
+    "langchain-google-genai>=2.1.5",
+    "langchain-mcp-adapters>=0.1.1",
+    "langchain-openai>=0.3.18",
+    "langgraph>=0.4.7",
+    "langgraph-cli[inmem]>=0.3.3",
+    "nest-asyncio>=1.6.0",
+    "pandas>=2.3.0",
+    "psycopg2-binary>=2.9.10",
+    "python-dotenv>=1.1.0",
+    "python-multipart>=0.0.20",
+    "sqlalchemy>=2.0.41",
+    "uvicorn>=0.34.3",
+    "websockets>=15.0.1",
+]
