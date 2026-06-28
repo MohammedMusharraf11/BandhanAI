@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BandhanAI | Customer Import</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=DM+Sans:wght@400;500&amp;family=JetBrains+Mono:wght@500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#835500",
+                        "tertiary-fixed-dim": "#7cd0ff",
+                        "primary-fixed-dim": "#ffb955",
+                        "on-tertiary-container": "#004d6a",
+                        "on-secondary-fixed-variant": "#474649",
+                        "tertiary": "#9bd9ff",
+                        "surface-tint": "#ffb955",
+                        "outline": "#9f8e7a",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed": "#c4e7ff",
+                        "primary": "#ffc880",
+                        "on-primary": "#452b00",
+                        "secondary-container": "#474649",
+                        "surface-variant": "#353436",
+                        "primary-fixed": "#ffddb4",
+                        "surface-container-lowest": "#0e0e0f",
+                        "background": "#0A0A0B",
+                        "on-primary-fixed": "#291800",
+                        "error-container": "#93000a",
+                        "surface-container-low": "#1c1b1c",
+                        "tertiary-container": "#3ac2ff",
+                        "surface": "#111113",
+                        "secondary": "#c8c6c8",
+                        "on-tertiary": "#00344a",
+                        "on-surface": "#e5e2e3",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-primary-container": "#644000",
+                        "surface-bright": "#3a393a",
+                        "surface-dim": "#131314",
+                        "primary-container": "#F5A623",
+                        "surface-container-high": "#2a2a2b",
+                        "surface-container": "#201f20",
+                        "on-tertiary-fixed": "#001e2c",
+                        "on-tertiary-fixed-variant": "#004c69",
+                        "on-secondary-container": "#b7b4b7",
+                        "outline-variant": "#524534",
+                        "on-primary-fixed-variant": "#633f00",
+                        "on-secondary": "#303032",
+                        "secondary-fixed": "#e5e1e4",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-container-highest": "#353436",
+                        "inverse-on-surface": "#313031",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "on-surface-variant": "#d7c3ae",
+                        "on-error": "#690005",
+                        "on-background": "#e5e2e3",
+                        "gold-accent": "#E8A020"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "unit": "4px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "gutter": "16px",
+                        "container-padding": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Sora"],
+                        "body-sm": ["DM Sans"],
+                        "data-mono": ["JetBrains Mono"],
+                        "body-base": ["DM Sans"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-md": ["Sora"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-sm": ["13px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "data-mono": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "body-base": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["10px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-md": ["20px", {"lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0B;
+            color: #E5E2E3;
+            -webkit-font-smoothing: antialiased;
+        }
+        .upload-zone {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .upload-zone:hover {
+            border-color: #E8A020;
+            transform: scale(1.01);
+            background-color: rgba(232, 160, 32, 0.05);
+        }
+        .upload-zone.active {
+            border-color: #E8A020;
+            background-color: rgba(232, 160, 32, 0.08);
+        }
+        
+        @keyframes progressFill {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        .progress-bar-animate {
+            animation: progressFill 2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+        }
+
+        .mapping-table tr {
+            border-bottom: 1px solid #1C1C1F;
+        }
+        .mapping-table tr:last-child {
+            border-bottom: none;
+        }
+
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23E8A020'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.5rem center;
+            background-size: 1.25em;
+        }
+    </style>
+</head>
+<body class="font-body-base text-body-base selection:bg-primary-container selection:text-on-primary">
+<main class="min-h-screen flex flex-col items-center justify-center p-gutter">
+<!-- Onboarding Container -->
+<div class="w-full max-w-2xl flex flex-col gap-stack-lg">
+<!-- Progress Header -->
+<div class="flex flex-col gap-unit items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Step 02 / 02</span>
+<div class="w-full bg-surface-container h-1 mt-stack-sm rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-full"></div>
+</div>
+<div class="mt-stack-lg text-center">
+<h1 class="font-display-lg text-display-lg text-on-surface">Customer Import</h1>
+<p class="font-body-base text-body-base text-on-surface-variant mt-stack-sm">Upload your customer database to calibrate the agent.</p>
+</div>
+</div>
+<!-- Upload Section -->
+<section class="bg-surface p-stack-lg border border-outline-variant rounded-lg" id="upload-section">
+<div class="upload-zone border-2 border-dashed border-outline-variant rounded-lg p-stack-lg flex flex-col items-center gap-stack-md cursor-pointer group" id="drop-zone">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center group-hover:bg-gold-accent/20 transition-colors">
+<span class="material-symbols-outlined text-gold-accent" style="font-variation-settings: 'FILL' 0;">upload_file</span>
+</div>
+<div class="text-center">
+<button class="bg-primary-container text-on-primary px-gutter py-stack-sm font-bold rounded hover:opacity-90 transition-opacity active:scale-95" onclick="simulateUpload()">
+                        Select CSV File
+                    </button>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-stack-sm">or drag and drop here</p>
+</div>
+</div>
+<!-- Progress Bar State -->
+<div class="hidden mt-stack-lg" id="processing-state">
+<div class="flex justify-between items-center mb-unit">
+<span class="font-label-caps text-label-caps text-gold-accent">Processing Database...</span>
+<span class="font-data-mono text-data-mono text-gold-accent" id="progress-percent">0%</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-gold-accent h-full w-0" id="bar-fill"></div>
+</div>
+</div>
+</section>
+<!-- Schema Review Section (Initially Hidden) -->
+<section class="hidden animate-in fade-in slide-in-from-bottom-4 duration-700 bg-surface border border-outline-variant rounded-lg overflow-hidden" id="mapping-section">
+<div class="px-gutter py-stack-md border-b border-outline-variant flex justify-between items-center bg-surface-container-low">
+<h2 class="font-display-lg text-headline-md text-on-surface flex items-center gap-unit">
+<span class="material-symbols-outlined text-gold-accent text-[20px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                    Detected Schema
+                </h2>
+<span class="font-data-mono text-data-mono px-stack-sm py-unit bg-gold-accent/10 text-gold-accent rounded border border-gold-accent/20">
+                    98% Match Confidence
+                </span>
+</div>
+<table class="w-full mapping-table">
+<thead>
+<tr class="bg-surface-container-lowest">
+<th class="text-left px-gutter py-stack-sm font-display-lg text-label-caps text-on-surface-variant uppercase tracking-wider">Your Header</th>
+<th class="text-left px-gutter py-stack-sm font-display-lg text-label-caps text-on-surface-variant uppercase tracking-wider">Canonical Type</th>
+</tr>
+</thead>
+<tbody class="font-body-base">
+<tr>
+<td class="px-gutter py-stack-md text-on-surface font-data-mono">E-Mail ID</td>
+<td class="px-gutter py-stack-md">
+<div class="relative w-full max-w-[240px]">
+<select class="w-full bg-background border border-outline-variant hover:border-gold-accent focus:border-gold-accent focus:ring-1 focus:ring-gold-accent text-on-surface py-2 px-3 rounded transition-colors cursor-pointer outline-none">
+<option selected="">email</option>
+<option>username</option>
+<option>contact_id</option>
+</select>
+</div>
+</td>
+</tr>
+<tr>
+<td class="px-gutter py-stack-md text-on-surface font-data-mono">Customer Name</td>
+<td class="px-gutter py-stack-md">
+<div class="relative w-full max-w-[240px]">
+<select class="w-full bg-background border border-outline-variant hover:border-gold-accent focus:border-gold-accent focus:ring-1 focus:ring-gold-accent text-on-surface py-2 px-3 rounded transition-colors cursor-pointer outline-none">
+<option selected="">full_name</option>
+<option>first_name</option>
+<option>organization</option>
+</select>
+</div>
+</td>
+</tr>
+<tr>
+<td class="px-gutter py-stack-md text-on-surface font-data-mono">Total Spent</td>
+<td class="px-gutter py-stack-md">
+<div class="relative w-full max-w-[240px]">
+<select class="w-full bg-background border border-outline-variant hover:border-gold-accent focus:border-gold-accent focus:ring-1 focus:ring-gold-accent text-on-surface py-2 px-3 rounded transition-colors cursor-pointer outline-none">
+<option selected="">lifetime_value</option>
+<option>revenue</option>
+<option>balance</option>
+</select>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<!-- Footer Action -->
+<footer class="hidden flex flex-col gap-stack-sm animate-in fade-in slide-in-from-bottom-2 duration-1000" id="footer-action">
+<button class="w-full bg-primary-container text-on-primary font-display-lg text-headline-md font-bold py-stack-lg rounded shadow-lg hover:brightness-110 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-stack-md">
+                Complete Onboarding
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+</button>
+<p class="text-center font-body-sm text-body-sm text-on-surface-variant">
+                By completing onboarding, you agree to our AI processing standards and data governance policies.
+            </p>
+</footer>
+</div>
+</main>
+<script>
+    function simulateUpload() {
+        const dropZone = document.getElementById('drop-zone');
+        const processingState = document.getElementById('processing-state');
+        const barFill = document.getElementById('bar-fill');
+        const progressPercent = document.getElementById('progress-percent');
+        const mappingSection = document.getElementById('mapping-section');
+        const footerAction = document.getElementById('footer-action');
+        const uploadSection = document.getElementById('upload-section');
+
+        // Lock interaction
+        dropZone.style.opacity = '0.5';
+        dropZone.style.pointerEvents = 'none';
+        processingState.classList.remove('hidden');
+        
+        // Trigger progress animation
+        barFill.classList.add('progress-bar-animate');
+
+        let count = 0;
+        const interval = setInterval(() => {
+            count += 1;
+            progressPercent.innerText = count + '%';
+            if (count >= 100) {
+                clearInterval(interval);
+                revealResults();
+            }
+        }, 20); // Sync with 2s animation
+    }
+
+    function revealResults() {
+        const mappingSection = document.getElementById('mapping-section');
+        const footerAction = document.getElementById('footer-action');
+        const uploadSection = document.getElementById('upload-section');
+
+        setTimeout(() => {
+            uploadSection.classList.add('opacity-40', 'scale-[0.98]', 'transition-all', 'duration-500');
+            
+            mappingSection.classList.remove('hidden');
+            mappingSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            setTimeout(() => {
+                footerAction.classList.remove('hidden');
+            }, 400);
+        }, 300);
+    }
+
+    // Drag and drop events
+    const dropZone = document.getElementById('drop-zone');
+    ['dragenter', 'dragover'].forEach(eventName => {
+        dropZone.addEventListener(eventName, (e) => {
+            e.preventDefault();
+            dropZone.classList.add('active');
+        }, false);
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+        dropZone.addEventListener(eventName, (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('active');
+            if (eventName === 'drop') {
+                simulateUpload();
+            }
+        }, false);
+    });
+</script>
+</body></html>

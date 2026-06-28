@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Integrations - BandhanAI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=DM+Sans:wght@400;500&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #0A0A0B;
+            color: #e5e2e3;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #131314;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #353436;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-background": "#e5e2e3",
+                      "secondary-container": "#474649",
+                      "on-error": "#690005",
+                      "on-tertiary-fixed-variant": "#004c69",
+                      "on-tertiary": "#00344a",
+                      "surface-container-low": "#1c1b1c",
+                      "inverse-surface": "#e5e2e3",
+                      "on-primary-fixed-variant": "#633f00",
+                      "surface-tint": "#E8A020",
+                      "on-primary-container": "#291800",
+                      "on-primary": "#291800",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "inverse-primary": "#835500",
+                      "surface-variant": "#353436",
+                      "tertiary-fixed-dim": "#7cd0ff",
+                      "on-secondary-fixed-variant": "#474649",
+                      "tertiary-fixed": "#c4e7ff",
+                      "background": "#0A0A0B",
+                      "surface-container": "#111113",
+                      "on-surface": "#e5e2e3",
+                      "outline": "#9f8e7a",
+                      "outline-variant": "#524534",
+                      "inverse-on-surface": "#313031",
+                      "error": "#ffb4ab",
+                      "primary-container": "#E8A020",
+                      "tertiary-container": "#3ac2ff",
+                      "primary-fixed": "#ffddb4",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "on-error-container": "#ffdad6",
+                      "primary-fixed-dim": "#E8A020",
+                      "primary": "#E8A020",
+                      "secondary": "#c8c6c8",
+                      "on-primary-fixed": "#291800",
+                      "surface-container-lowest": "#0A0A0B",
+                      "tertiary": "#9bd9ff",
+                      "surface-bright": "#3a393a",
+                      "surface": "#0A0A0B",
+                      "on-tertiary-container": "#004d6a",
+                      "on-tertiary-fixed": "#001e2c",
+                      "on-secondary-container": "#b7b4b7",
+                      "on-secondary": "#303032",
+                      "secondary-fixed": "#e5e1e4",
+                      "surface-container-high": "#201f20",
+                      "on-surface-variant": "#d7c3ae",
+                      "surface-container-highest": "#2a2a2b",
+                      "surface-dim": "#0A0A0B",
+                      "error-container": "#93000a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "4px",
+                      "gutter": "16px",
+                      "stack-lg": "32px",
+                      "stack-sm": "8px",
+                      "container-padding": "24px",
+                      "stack-md": "16px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Sora"],
+                      "headline-md": ["Sora"],
+                      "body-base": ["DM Sans"],
+                      "body-sm": ["DM Sans"],
+                      "data-mono": ["JetBrains Mono"],
+                      "label-caps": ["JetBrains Mono"]
+              },
+              "fontSize": {
+                      "display-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "headline-md": ["20px", {"lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                      "body-base": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "body-sm": ["13px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "data-mono": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                      "label-caps": ["10px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="font-body-base text-on-surface bg-background">
+<!-- Global SideNavBar Shell -->
+<nav class="w-[240px] h-screen fixed left-0 top-0 bg-surface-container-lowest border-r border-outline-variant flex flex-col h-full py-gutter px-stack-md z-20">
+<div class="mb-stack-lg px-2">
+<h1 class="font-display-lg text-display-lg font-bold text-primary">BandhanAI</h1>
+<p class="font-data-mono text-label-caps text-on-surface-variant tracking-widest mt-1">ENTERPRISE CRM</p>
+</div>
+<div class="flex-grow flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant font-medium hover:bg-surface-variant transition-colors duration-200 cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-base">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant font-medium hover:bg-surface-variant transition-colors duration-200 cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-body-base">Chat</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant font-medium hover:bg-surface-variant transition-colors duration-200 cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined">campaign</span>
+<span class="font-body-base">Campaigns</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-primary font-bold bg-surface-variant transition-colors duration-200 cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-base">Settings</span>
+</a>
+</div>
+<div class="mt-auto border-t border-outline-variant pt-gutter px-2 flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary-container flex items-center justify-center text-on-primary font-bold text-xs">
+                BA
+            </div>
+<div class="flex flex-col">
+<span class="text-body-sm font-medium">Tenant Admin</span>
+<span class="text-label-caps text-on-surface-variant">PLAN: PRO</span>
+</div>
+</div>
+</nav>
+<!-- Main Canvas -->
+<main class="ml-[240px] min-h-screen">
+<!-- TopAppBar -->
+<header class="h-16 fixed top-0 right-0 left-[240px] z-10 bg-background border-b border-outline-variant flex justify-between items-center px-gutter w-full">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant py-2 pl-10 pr-4 text-body-sm focus:outline-none focus:ring-1 focus:ring-primary transition-all" placeholder="Search settings..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-on-surface transition-colors">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-on-surface transition-colors">help</button>
+<div class="w-8 h-8 bg-surface-variant flex items-center justify-center rounded font-data-mono text-xs cursor-pointer">JS</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="pt-24 px-container-padding pb-gutter max-w-4xl">
+<!-- Header Section -->
+<div class="mb-stack-lg">
+<h2 class="font-display-lg text-display-lg text-on-background mb-2">Integrations</h2>
+<p class="text-on-surface-variant text-body-base max-w-xl">
+                    Connect your existing workflow tools to BandhanAI. Synced data is encrypted at rest and used only to power context-aware AI recommendations.
+                </p>
+</div>
+<!-- Integrations List -->
+<div class="space-y-4">
+<!-- Integration Row: Gmail -->
+<div class="bg-surface-container-lowest border border-outline-variant p-gutter flex items-center justify-between hover:bg-surface-container transition-all duration-200 group">
+<div class="flex items-center gap-gutter">
+<div class="w-12 h-12 bg-surface-variant rounded flex items-center justify-center border border-outline-variant overflow-hidden">
+<img class="w-8 h-8 opacity-80" data-alt="A professional minimalist logo for a major email service provider, rendered in a clean flat design style with high contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdsxgOBC71G7JcQ8OiTV7tDvIX2bRO7G7KtCVxrA5kxp8Gv8Y-kfW-Khi08TBF8rDXiuDHg76CbUTr03n79CaBws7yEX3kaLd_BDxhfnT4l5o9F_XFcde0QFEElfxXc999ueLu0KqKAOanFfTaPXSYc4e47vWfAHCJvgtwnRO_sZp_7768YlNk_A3-_sBy4rLg6UW0BQPxzkbdqpnJUN9jp5PHmAGgGKam61OSbJ2ymRDQi-GxFw7XmE2pHG5STHgkzaklTjOxBQU"/>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">Gmail</h3>
+<span class="bg-primary/10 text-primary px-2 py-0.5 rounded text-label-caps uppercase tracking-widest border border-primary/20">Connected</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mt-1">Synced with <span class="font-data-mono text-primary">marketing-ops@enterprise.com</span></p>
+</div>
+</div>
+<button class="px-gutter py-2 bg-transparent border border-outline-variant text-on-surface-variant hover:text-error hover:border-error text-body-sm font-medium transition-all active:scale-95">
+                        Disconnect
+                    </button>
+</div>
+<!-- Integration Row: Slack -->
+<div class="bg-surface-container-lowest border border-outline-variant p-gutter flex items-center justify-between hover:bg-surface-container transition-all duration-200 group">
+<div class="flex items-center gap-gutter">
+<div class="w-12 h-12 bg-surface-variant rounded flex items-center justify-center border border-outline-variant overflow-hidden">
+<img class="w-8 h-8 opacity-80" data-alt="A minimalist tech logo for a collaborative workspace messaging platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxH5l7psjKnfDf-k6_Iux0QN2919YOars-xYnoFQVDUsx-oNt5ZGlt-xyeOqUvlDT7DglRQObsg_8i1DC3d02-UauxhdLb8wFE3RzbEPr8BvXOBBJd_7_rssgQVHPuD_X_TZk6Ir8alPcMVCUxf7ipOkYFG7oLL6EUFFwpR9mkU_uP4MDWBHlJrMHIk--9gX4CwM7iJu5vXxhx45MDNPj_ccgKIMMy9O24sJ0Cn6alojgKl68nqrXgPflPUSs276Y_5yXKdLaqsTE"/>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">Slack</h3>
+<span class="bg-surface-variant text-on-surface-variant px-2 py-0.5 rounded text-label-caps uppercase tracking-widest">Not Connected</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mt-1">Sync workspace channels and AI insights to Slack threads.</p>
+</div>
+</div>
+<button class="px-gutter py-2 bg-primary text-on-primary font-bold text-body-sm transition-all hover:brightness-110 active:scale-95">
+                        Connect
+                    </button>
+</div>
+<!-- Simple Muted Footer Line -->
+<div class="pt-4 text-center">
+<p class="text-label-caps text-on-surface-variant opacity-60">More integrations coming soon</p>
+</div>
+</div>
+<!-- Danger Zone Section -->
+<div class="mt-stack-lg pt-stack-lg border-t border-outline-variant">
+<div class="mb-stack-md">
+<h4 class="font-headline-md text-headline-md text-error flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+                        Danger Zone
+                    </h4>
+<p class="text-body-sm text-on-surface-variant mt-1">Critical actions that affect tenant data integrity and history.</p>
+</div>
+<div class="bg-error-container/10 border border-error/20 p-stack-md flex items-center justify-between">
+<div>
+<p class="font-medium text-on-background">Re-upload Customer Data</p>
+<p class="text-body-sm text-on-surface-variant max-w-lg">Overwrite existing tenant database with a new JSON/CSV payload. <span class="text-error font-medium">Please note that this action is irreversible and will result in permanent data loss.</span></p>
+</div>
+<button class="px-gutter py-2 border border-error/40 text-error hover:bg-error/10 text-body-sm font-bold transition-all active:scale-95">
+                        Re-upload
+</button>
+</div>
+</div>
+</div>
+</main>
+<script>
+        // Micro-interactions for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.classList.add('scale-95');
+            });
+            button.addEventListener('mouseup', () => {
+                button.classList.remove('scale-95');
+            });
+        });
+
+        // Search highlight logic (Visual only)
+        const searchInput = document.querySelector('input[type="text"]');
+        if(searchInput) {
+            searchInput.addEventListener('focus', () => {
+                searchInput.parentElement.classList.add('ring-1', 'ring-primary');
+            });
+            searchInput.addEventListener('blur', () => {
+                searchInput.parentElement.classList.remove('ring-1', 'ring-primary');
+            });
+        }
+    </script>
+</body></html>

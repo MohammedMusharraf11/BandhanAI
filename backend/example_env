@@ -1,0 +1,28 @@
+# Core LLM & Database APIs
+GOOGLE_API_KEY=your-gemini-api-key
+SUPABASE_URI=postgresql://postgres.xxxx:password@aws-0-us-east-1.pooler.supabase.com:5432/postgres
+
+# Multi-Tenant & Security
+SUPABASE_JWT_SECRET=your-supabase-jwt-signing-secret
+ENCRYPTION_KEY=your-fernet-encryption-key-32-bytes-base64
+
+# Frontend URL for OAuth Redirects
+FRONTEND_URL=http://localhost:3000
+
+# Gmail OAuth Credentials (direct Google API)
+GOOGLE_CLIENT_ID=your-google-oauth-client-id
+GOOGLE_CLIENT_SECRET=your-google-oauth-client-secret
+GMAIL_REDIRECT_URI=http://localhost:8000/auth/gmail/callback
+
+# Slack OAuth Credentials
+SLACK_CLIENT_ID=your-slack-oauth-client-id
+SLACK_CLIENT_SECRET=your-slack-oauth-client-secret
+SLACK_REDIRECT_URI=http://localhost:8000/auth/slack/callback
+
+# Observability
+LANGSMITH_TRACING=false
+LANGSMITH_ENDPOINT=https://api.smith.langchain.com
+LANGSMITH_API_KEY=
+LANGSMITH_PROJECT=bandhan-ai
+
+

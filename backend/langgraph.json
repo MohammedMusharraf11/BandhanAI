@@ -1,0 +1,7 @@
+{
+  "dependencies": ["."],
+  "graphs": {
+    "ralph_agent": "./graph.py:build_graph"
+  },
+  "env": "./.env"
+}

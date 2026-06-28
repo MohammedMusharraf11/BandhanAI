@@ -1,0 +1,275 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&amp;family=DM+Sans:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        body {
+            background-color: #0A0A0B;
+            color: #e5e2e3;
+            font-family: 'DM Sans', sans-serif;
+            overflow: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #131314;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #353436;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #524534;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#e5e2e3",
+                        "secondary-container": "#474649",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#004c69",
+                        "on-tertiary": "#00344a",
+                        "surface-container-low": "#1c1b1c",
+                        "inverse-surface": "#e5e2e3",
+                        "on-primary-fixed-variant": "#633f00",
+                        "surface-tint": "#ffb955",
+                        "on-primary-container": "#644000",
+                        "on-primary": "#452b00",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "inverse-primary": "#835500",
+                        "surface-variant": "#353436",
+                        "tertiary-fixed-dim": "#7cd0ff",
+                        "on-secondary-fixed-variant": "#474649",
+                        "tertiary-fixed": "#c4e7ff",
+                        "background": "#131314",
+                        "surface-container": "#201f20",
+                        "on-surface": "#e5e2e3",
+                        "outline": "#9f8e7a",
+                        "outline-variant": "#524534",
+                        "inverse-on-surface": "#313031",
+                        "error": "#ffb4ab",
+                        "primary-container": "#f5a623",
+                        "tertiary-container": "#3ac2ff",
+                        "primary-fixed": "#ffddb4",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed-dim": "#ffb955",
+                        "primary": "#ffc880",
+                        "secondary": "#c8c6c8",
+                        "on-primary-fixed": "#291800",
+                        "surface-container-lowest": "#0e0e0f",
+                        "tertiary": "#9bd9ff",
+                        "surface-bright": "#3a393a",
+                        "surface": "#131314",
+                        "on-tertiary-container": "#004d6a",
+                        "on-tertiary-fixed": "#001e2c",
+                        "on-secondary-container": "#b7b4b7",
+                        "on-secondary": "#303032",
+                        "secondary-fixed": "#e5e1e4",
+                        "surface-container-high": "#2a2a2b",
+                        "on-surface-variant": "#d7c3ae",
+                        "surface-container-highest": "#353436",
+                        "surface-dim": "#131314",
+                        "error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "gutter": "16px",
+                        "stack-lg": "32px",
+                        "stack-sm": "8px",
+                        "container-padding": "24px",
+                        "stack-md": "16px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Sora"],
+                        "headline-md": ["Sora"],
+                        "body-base": ["DM Sans"],
+                        "body-sm": ["DM Sans"],
+                        "data-mono": ["JetBrains Mono"],
+                        "label-caps": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-md": ["20px", {"lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                        "body-base": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-sm": ["13px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "data-mono": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "label-caps": ["10px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background">
+<!-- Background Shell (Screen 4: Chat Screen Content) -->
+<div class="flex h-screen w-full opacity-30 pointer-events-none grayscale">
+<!-- SideNavBar -->
+<nav class="w-[240px] h-screen fixed left-0 top-0 bg-surface-container-lowest border-r border-outline-variant flex flex-col h-full py-gutter px-stack-md">
+<div class="mb-stack-lg">
+<span class="font-display-lg text-display-lg font-bold text-primary">BandhanAI</span>
+<p class="font-body-sm text-on-surface-variant">Enterprise CRM</p>
+</div>
+<div class="flex flex-col gap-unit">
+<div class="flex items-center gap-stack-md px-stack-sm py-2 text-on-surface-variant font-medium">
+<span class="material-symbols-outlined">dashboard</span> Dashboard
+                </div>
+<div class="flex items-center gap-stack-md px-stack-sm py-2 text-primary font-bold bg-surface-variant">
+<span class="material-symbols-outlined">forum</span> Chat
+                </div>
+<div class="flex items-center gap-stack-md px-stack-sm py-2 text-on-surface-variant font-medium">
+<span class="material-symbols-outlined">campaign</span> Campaigns
+                </div>
+<div class="flex items-center gap-stack-md px-stack-sm py-2 text-on-surface-variant font-medium">
+<span class="material-symbols-outlined">settings</span> Settings
+                </div>
+</div>
+</nav>
+<!-- TopAppBar Context -->
+<header class="h-16 fixed top-0 right-0 left-[240px] z-10 bg-background border-b border-outline-variant flex justify-between items-center px-gutter w-full">
+<div class="flex items-center gap-stack-md">
+<span class="font-headline-md text-headline-md font-bold text-primary">AI Copilot</span>
+</div>
+<div class="flex gap-stack-md">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant">help</span>
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold text-xs">JD</div>
+</div>
+</header>
+<!-- Chat Stream Mock -->
+<main class="ml-[240px] mt-16 p-gutter w-full flex flex-col gap-stack-lg overflow-y-auto">
+<div class="max-w-3xl mx-auto w-full space-y-6">
+<div class="flex gap-4">
+<div class="w-1 bg-on-background h-auto"></div>
+<div class="flex-1">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase tracking-widest">User</p>
+<p class="font-body-base text-body-base">Draft a re-engagement email for inactive enterprise customers from Q3.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-1 bg-primary h-auto"></div>
+<div class="flex-1 bg-surface-container p-stack-md">
+<p class="font-label-caps text-label-caps text-primary mb-1 uppercase tracking-widest">BandhanAI</p>
+<p class="font-body-base text-body-base">I've generated a draft for the 'Enterprise Reactivation' campaign. Targeting 1,240 customers who haven't logged in for 90 days. Please review the details below.</p>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Screen 5: Approval Modal Overlay -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-gutter">
+<!-- Modal Container -->
+<div class="w-full max-w-[640px] bg-surface-container-lowest border border-outline-variant shadow-2xl overflow-hidden flex flex-col max-h-[921px]">
+<!-- Modal Header -->
+<div class="px-container-padding py-stack-md border-b border-outline-variant flex items-center justify-between bg-surface-container-low">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 bg-primary rounded-full"></div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Approve Action</h2>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Content -->
+<div class="flex-1 overflow-y-auto custom-scrollbar p-container-padding space-y-stack-md">
+<!-- Action Type Badge -->
+<div class="flex items-center gap-2">
+<span class="font-data-mono text-data-mono px-2 py-0.5 bg-primary/10 text-primary border border-primary/20">ACTION: SEND_CAMPAIGN_EMAIL</span>
+<span class="font-data-mono text-data-mono px-2 py-0.5 bg-surface-variant text-on-surface-variant border border-outline-variant">ID: CAM-9821-X</span>
+</div>
+<!-- Targeted Customers Counter -->
+<div class="p-stack-md bg-surface-container border border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-primary">groups</span>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">TARGET AUDIENCE</p>
+<p class="font-headline-md text-headline-md font-bold text-on-surface">1,240 Customers</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-caps text-label-caps text-on-surface-variant">SEGMENT</p>
+<p class="font-data-mono text-data-mono text-on-surface">Enterprise_Inactive_Q3</p>
+</div>
+</div>
+<!-- Subject Line -->
+<div class="space-y-unit">
+<label class="font-label-caps text-label-caps text-on-surface-variant">EMAIL SUBJECT</label>
+<div class="p-3 bg-surface-container-low border border-outline-variant font-body-base text-on-surface font-medium">
+                        Exclusive Enterprise Update: Renewing Your BandhanAI Experience
+                    </div>
+</div>
+<!-- HTML Preview -->
+<div class="space-y-unit">
+<label class="font-label-caps text-label-caps text-on-surface-variant">HTML BODY PREVIEW</label>
+<div class="border border-outline-variant bg-surface-container-highest overflow-hidden">
+<div class="h-8 bg-surface-container border-b border-outline-variant flex items-center px-3 gap-1">
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+<div class="flex-1"></div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">desktop_windows</span>
+</div>
+<div class="h-[240px] overflow-y-auto custom-scrollbar bg-white p-6 space-y-4">
+<!-- Simulated Email Content -->
+<div class="w-24 h-6 bg-slate-200"></div>
+<div class="space-y-2">
+<div class="w-full h-4 bg-slate-100"></div>
+<div class="w-full h-4 bg-slate-100"></div>
+<div class="w-3/4 h-4 bg-slate-100"></div>
+</div>
+<div class="w-full h-40 bg-slate-50 border border-dashed border-slate-200 flex items-center justify-center">
+<img alt="Dashboard Preview" class="max-h-32 opacity-80" data-alt="A professional enterprise dashboard interface showing complex data visualizations, heatmaps, and financial metrics. The aesthetic is ultra-modern with a dark background and vibrant orange and blue highlights, emphasizing high-performance data analysis. The lighting is crisp and digital, suggesting a high-end SaaS product designed for executive decision-making." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4PpXmDSpdTBPjPoGtgFPetnC4PwHRNkEdL1iGV-V6_gOQw3_a52NRPAQzcYC2hULkznfW2pSsmlrQaaarSrdOFHXFaIXkY1OtEi8u6sk7q_DmJaODRw6p4U2r1IZyByi-qLrZq1UUouA-YV852rglnPZNpSNRmf_sLOh1jSsHV_2Wa8YKa_79oOEHRYDIBvyvvCSjk3g8fYQEVu3BX-eWJ2bv3gtDL0Rzk5juGwUlYJnpLWNp3l4PiupvGchhtpXJ-xmYV5fy2SM">
+</div>
+<div class="w-32 h-10 bg-[#F5A623] rounded-sm mx-auto"></div>
+</div>
+</div>
+</div>
+<!-- Trust Disclosure -->
+<div class="flex gap-3 p-3 bg-surface-container/50 border-l-2 border-primary">
+<span class="material-symbols-outlined text-primary text-sm">security</span>
+<p class="font-body-sm text-on-surface-variant">
+                        By clicking <span class="text-on-surface font-bold">Approve</span>, this campaign will be scheduled for immediate delivery. This action cannot be undone once the dispatch sequence begins.
+                    </p>
+</div>
+</div>
+<!-- Modal Footer (Actions) -->
+<div class="px-container-padding py-gutter bg-surface-container-low border-t border-outline-variant flex gap-stack-md justify-end">
+<button class="px-gutter py-2 border border-outline-variant text-on-surface-variant font-medium hover:bg-surface-variant transition-all cursor-pointer active:scale-95 flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">block</span> Reject
+                </button>
+<button class="px-gutter py-2 border border-outline-variant text-on-surface font-medium hover:bg-surface-variant transition-all cursor-pointer active:scale-95 flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">edit</span> Edit
+                </button>
+<button class="px-stack-lg py-2 bg-primary-container text-on-primary-container font-bold hover:brightness-110 transition-all cursor-pointer active:scale-95 flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span> Approve &amp; Send
+                </button>
+</div>
+</div>
+</div>
+<!-- Micro-interactions JS -->
+<script>
+        // Simple logic for hover effects or close simulation
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                console.log('Action triggered');
+                // Potential close/approve logic here
+            });
+        });
+    </script>
+</body></html>

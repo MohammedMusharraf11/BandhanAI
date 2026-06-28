@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=DM+Sans:wght@400;500&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#e5e2e3",
+                        "secondary-container": "#474649",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#004c69",
+                        "on-tertiary": "#00344a",
+                        "surface-container-low": "#1c1b1c",
+                        "inverse-surface": "#e5e2e3",
+                        "on-primary-fixed-variant": "#633f00",
+                        "surface-tint": "#E8A020",
+                        "on-primary-container": "#311c00",
+                        "on-primary": "#311c00",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "inverse-primary": "#835500",
+                        "surface-variant": "#353436",
+                        "tertiary-fixed-dim": "#7cd0ff",
+                        "on-secondary-fixed-variant": "#474649",
+                        "tertiary-fixed": "#c4e7ff",
+                        "background": "#0A0A0B",
+                        "surface-container": "#201f20",
+                        "on-surface": "#e5e2e3",
+                        "outline": "#9f8e7a",
+                        "outline-variant": "#524534",
+                        "inverse-on-surface": "#313031",
+                        "error": "#ffb4ab",
+                        "primary-container": "#E8A020",
+                        "tertiary-container": "#3ac2ff",
+                        "primary-fixed": "#ffddb4",
+                        "on-secondary-fixed": "#1b1b1d",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed-dim": "#E8A020",
+                        "primary": "#E8A020",
+                        "secondary": "#c8c6c8",
+                        "on-primary-fixed": "#291800",
+                        "surface-container-lowest": "#0e0e0f",
+                        "tertiary": "#9bd9ff",
+                        "surface-bright": "#3a393a",
+                        "surface": "#131314",
+                        "on-tertiary-container": "#004d6a",
+                        "on-tertiary-fixed": "#001e2c",
+                        "on-secondary-container": "#b7b4b7",
+                        "on-secondary": "#303032",
+                        "secondary-fixed": "#e5e1e4",
+                        "surface-container-high": "#2a2a2b",
+                        "on-surface-variant": "#d7c3ae",
+                        "surface-container-highest": "#353436",
+                        "surface-dim": "#131314",
+                        "error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "gutter": "16px",
+                        "stack-lg": "32px",
+                        "stack-sm": "8px",
+                        "container-padding": "24px",
+                        "stack-md": "16px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Sora"],
+                        "headline-md": ["Sora"],
+                        "body-base": ["DM Sans"],
+                        "body-sm": ["DM Sans"],
+                        "data-mono": ["JetBrains Mono"],
+                        "label-caps": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-md": ["20px", {"lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                        "body-base": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-sm": ["13px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "data-mono": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "label-caps": ["10px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0B;
+            color: #e5e2e3;
+            -webkit-font-smoothing: antialiased;
+        }
+        .step-transition {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .surface-glass {
+            background: rgba(17, 17, 19, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid #27272A;
+        }
+        .gold-glow:focus {
+            border-color: #E8A020;
+            box-shadow: 0 0 0 1px #E8A020;
+        }
+    </style>
+</head>
+<body class="font-body-base selection:bg-primary-container selection:text-on-primary-container">
+<div class="flex w-full bg-[#0A0A0B]">
+<!-- Main Content Area - Center Focused for Onboarding -->
+<main class="flex-1 flex flex-col items-center justify-center p-gutter relative z-0">
+<!-- Atmospheric Background Element - Gold Hue -->
+<div class="absolute inset-0 pointer-events-none overflow-hidden opacity-20">
+<div class="absolute -top-1/2 -left-1/4 w-full h-full bg-[radial-gradient(circle_at_center,#E8A020_0%,transparent_70%)] blur-[120px]"></div>
+</div>
+<!-- Onboarding Container -->
+<div class="w-full max-w-[800px] z-10">
+<!-- Progress Header -->
+<div class="mb-stack-lg">
+<div class="flex items-center justify-between mb-4">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-primary mb-1 uppercase tracking-widest">Setup Configuration</span>
+<h1 class="font-display-lg text-display-lg text-on-background" id="page-title">Agent Persona</h1>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-data-mono text-data-mono text-on-surface-variant" id="step-indicator">STEP 01 / 02</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="h-1 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-1/2 transition-all duration-500 ease-in-out" id="progress-bar"></div>
+</div>
+</div>
+<!-- Form Card -->
+<div class="surface-glass rounded-xl p-8 min-h-[480px] flex flex-col">
+<!-- Step 1: Agent Persona -->
+<div class="step-transition opacity-100 flex-1 flex flex-col" id="step-1">
+<div class="grid grid-cols-2 gap-gutter mb-stack-md">
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Organization Name</label>
+<input class="w-full bg-[#09090B] border border-outline-variant rounded p-3 text-body-base gold-glow focus:outline-none transition-all" placeholder="e.g. Acme Corp" type="text" value="BandhanAI"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Agent Name</label>
+<input class="w-full bg-[#09090B] border border-outline-variant rounded p-3 text-body-base gold-glow focus:outline-none transition-all" placeholder="e.g. Priya" type="text"/>
+</div>
+</div>
+<div class="space-y-2 flex-1 flex flex-col">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Backstory &amp; Context</label>
+<textarea class="w-full flex-1 bg-[#09090B] border border-outline-variant rounded p-4 text-body-base gold-glow focus:outline-none transition-all resize-none min-h-[160px]" placeholder="Describe the agent's personality, domain expertise, and how it should respond to customers..."></textarea>
+</div>
+</div>
+<!-- Step 2: Data Mapping (Hidden Initially) -->
+<div class="step-transition opacity-0 hidden flex-1 flex flex-col" id="step-2">
+<div class="mb-stack-md">
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-8 flex flex-col items-center justify-center bg-surface-container-lowest hover:border-primary cursor-pointer transition-colors group">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary transition-colors mb-2">upload_file</span>
+<p class="font-headline-md text-headline-md text-on-surface-variant group-hover:text-on-background">Drop CRM CSV Export</p>
+<p class="font-body-sm text-body-sm text-outline mt-1">Files up to 50MB supported</p>
+</div>
+</div>
+<div class="flex-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-2 block">Schema Mapping Preview</label>
+<div class="bg-surface-container-lowest border border-outline-variant rounded overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-variant">
+<tr>
+<th class="p-3 font-label-caps text-label-caps text-on-surface-variant uppercase border-b border-outline-variant">Source Column</th>
+<th class="p-3 w-8 border-b border-outline-variant"></th>
+<th class="p-3 font-label-caps text-label-caps text-on-surface-variant uppercase border-b border-outline-variant">Canonical Target</th>
+</tr>
+</thead>
+<tbody class="font-data-mono text-data-mono">
+<tr class="hover:bg-surface-variant transition-colors border-b border-outline-variant">
+<td class="p-3 text-on-surface">user_email_address</td>
+<td class="p-3"><span class="material-symbols-outlined text-sm text-primary">arrow_forward</span></td>
+<td class="p-3 text-primary">Email</td>
+</tr>
+<tr class="hover:bg-surface-variant transition-colors border-b border-outline-variant">
+<td class="p-3 text-on-surface">full_name_primary</td>
+<td class="p-3"><span class="material-symbols-outlined text-sm text-primary">arrow_forward</span></td>
+<td class="p-3 text-primary">Name</td>
+</tr>
+<tr class="hover:bg-surface-variant transition-colors border-b border-outline-variant">
+<td class="p-3 text-on-surface">phone_number</td>
+<td class="p-3"><span class="material-symbols-outlined text-sm text-primary">arrow_forward</span></td>
+<td class="p-3 text-primary">Phone</td>
+</tr>
+<tr class="hover:bg-surface-variant transition-colors">
+<td class="p-3 text-on-surface">last_interaction_utc</td>
+<td class="p-3"><span class="material-symbols-outlined text-sm text-primary">arrow_forward</span></td>
+<td class="p-3 text-primary">Last Seen</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="mt-stack-lg flex items-center justify-between">
+<button class="hidden opacity-50 hover:opacity-100 flex items-center gap-2 font-label-caps text-label-caps text-on-surface-variant uppercase transition-all" id="back-btn">
+<span class="material-symbols-outlined text-base">arrow_back</span>
+                            Back
+                        </button>
+<div class="flex-1"></div>
+<button class="bg-primary-container text-on-primary-container font-headline-md text-headline-md px-8 py-3 rounded hover:bg-[#D49010] transition-colors flex items-center gap-2 active:scale-95 duration-75" id="next-btn">
+                            Continue
+                            <span class="material-symbols-outlined text-xl">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Assistance Note -->
+<div class="mt-8 flex items-center gap-4 p-4 border-l-2 border-primary bg-surface-container-lowest/50">
+<span class="material-symbols-outlined text-primary" data-weight="fill">auto_awesome</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">
+                        "I'll use the backstory to calibrate tone-of-voice and the CSV to build the initial knowledge graph for lead qualification." — <span class="text-primary font-bold">PriyaAI</span>
+</p>
+</div>
+</div>
+</main>
+</div>
+<!-- UI Interaction Script -->
+<script>
+        const nextBtn = document.getElementById('next-btn');
+        const backBtn = document.getElementById('back-btn');
+        const step1 = document.getElementById('step-1');
+        const step2 = document.getElementById('step-2');
+        const progressBar = document.getElementById('progress-bar');
+        const stepIndicator = document.getElementById('step-indicator');
+        const pageTitle = document.getElementById('page-title');
+
+        let currentStep = 1;
+
+        nextBtn.addEventListener('click', () => {
+            if (currentStep === 1) {
+                // Transition to Step 2
+                step1.classList.add('opacity-0');
+                setTimeout(() => {
+                    step1.classList.add('hidden');
+                    step2.classList.remove('hidden');
+                    setTimeout(() => {
+                        step2.classList.remove('opacity-0');
+                        step2.classList.add('opacity-100');
+                    }, 50);
+                }, 400);
+
+                progressBar.style.width = '100%';
+                stepIndicator.innerText = 'STEP 02 / 02';
+                pageTitle.innerText = 'Data Training';
+                backBtn.classList.remove('hidden');
+                nextBtn.innerHTML = 'Complete Setup <span class="material-symbols-outlined text-xl">check_circle</span>';
+                currentStep = 2;
+            } else {
+                // Final Submission effect
+                nextBtn.classList.add('animate-pulse');
+                nextBtn.innerText = 'Initializing...';
+                setTimeout(() => {
+                    alert('Agent Environment Prepared. Accessing Dashboard.');
+                }, 1000);
+            }
+        });
+
+        backBtn.addEventListener('click', () => {
+            if (currentStep === 2) {
+                step2.classList.remove('opacity-100');
+                step2.classList.add('opacity-0');
+                setTimeout(() => {
+                    step2.classList.add('hidden');
+                    step1.classList.remove('hidden');
+                    setTimeout(() => {
+                        step1.classList.remove('opacity-0');
+                        step1.classList.add('opacity-100');
+                    }, 50);
+                }, 400);
+
+                progressBar.style.width = '50%';
+                stepIndicator.innerText = 'STEP 01 / 02';
+                pageTitle.innerText = 'Agent Persona';
+                backBtn.classList.add('hidden');
+                nextBtn.innerHTML = 'Continue <span class="material-symbols-outlined text-xl">chevron_right</span>';
+                currentStep = 1;
+            }
+        });
+    </script>
+</body></html>

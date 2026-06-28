@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login | BandhanAI</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;family=Sora:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-background": "#e5e2e3",
+                      "secondary-container": "#474649",
+                      "on-error": "#690005",
+                      "on-tertiary-fixed-variant": "#004c69",
+                      "on-tertiary": "#00344a",
+                      "surface-container-low": "#1c1b1c",
+                      "inverse-surface": "#e5e2e3",
+                      "on-primary-fixed-variant": "#633f00",
+                      "surface-tint": "#E8A020",
+                      "on-primary-container": "#291800",
+                      "on-primary": "#291800",
+                      "secondary-fixed-dim": "#c8c6c8",
+                      "inverse-primary": "#835500",
+                      "surface-variant": "#353436",
+                      "tertiary-fixed-dim": "#7cd0ff",
+                      "on-secondary-fixed-variant": "#474649",
+                      "tertiary-fixed": "#c4e7ff",
+                      "background": "#0A0A0B",
+                      "surface-container": "#111113",
+                      "on-surface": "#e5e2e3",
+                      "outline": "#27272A",
+                      "outline-variant": "#524534",
+                      "inverse-on-surface": "#313031",
+                      "error": "#ffb4ab",
+                      "primary-container": "#E8A020",
+                      "tertiary-container": "#3ac2ff",
+                      "primary-fixed": "#ffddb4",
+                      "on-secondary-fixed": "#1b1b1d",
+                      "on-error-container": "#ffdad6",
+                      "primary-fixed-dim": "#E8A020",
+                      "primary": "#E8A020",
+                      "secondary": "#c8c6c8",
+                      "on-primary-fixed": "#291800",
+                      "surface-container-lowest": "#0e0e0f",
+                      "tertiary": "#9bd9ff",
+                      "surface-bright": "#3a393a",
+                      "surface": "#131314",
+                      "on-tertiary-container": "#004d6a",
+                      "on-tertiary-fixed": "#001e2c",
+                      "on-secondary-container": "#b7b4b7",
+                      "on-secondary": "#303032",
+                      "secondary-fixed": "#e5e1e4",
+                      "surface-container-high": "#2a2a2b",
+                      "on-surface-variant": "#d7c3ae",
+                      "surface-container-highest": "#353436",
+                      "surface-dim": "#131314",
+                      "error-container": "#93000a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "4px",
+                      "gutter": "16px",
+                      "stack-lg": "32px",
+                      "stack-sm": "8px",
+                      "container-padding": "24px",
+                      "stack-md": "16px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Sora"],
+                      "headline-md": ["Sora"],
+                      "body-base": ["DM Sans"],
+                      "body-sm": ["DM Sans"],
+                      "data-mono": ["JetBrains Mono"],
+                      "label-caps": ["JetBrains Mono"]
+              },
+              "fontSize": {
+                      "display-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "headline-md": ["20px", {"lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                      "body-base": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "body-sm": ["13px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "data-mono": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                      "label-caps": ["10px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0B;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        input:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body class="font-body-base text-on-background flex items-center justify-center min-h-screen p-container-padding">
+<!-- Login Container -->
+<main class="w-full max-w-[400px] flex flex-col items-center">
+<!-- Logo Section -->
+<div class="mb-stack-lg flex flex-col items-center gap-1">
+<img alt="BandhanAI Logo Mark" class="w-12 h-12 object-contain" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAMOUlEQVR4AeycXYhkRxXH69xd92N6EYRgzBjZneklUfBBxTdfViUPghgRjKZ3XTDED0RCYIka8GFBkYjit2gMIrqZGQmKgTwJgaiQN/FBEeKaGUdDDJp9cTPdu7ozU566PZ3tmenp7nu7btU5Vf/e+9V1q87H79S/7709M1sYvEAABA4kAIEciAYnQMAYCASzAATGEIBAxsDBKRCAQDAHQGAMgQYFMsYrToGAEgIQiJJCIcw4BCCQONzhVQkBCERJoRBmHAIQSBzu8KqEgE6BKIGLMPUTgED01xAZNEgAAmkQLkzrJwCB6K8hMmiQAATSIFyY1k8AAtlTQ7wFgWECEMgwDRyDwB4CEMgeIHgLAsMEIJBhGjgGgT0EIJA9QPAWBIYJQCDDNJo9hnWFBCAQhUVDyOEIQCDhWMOTQgIQiMKiIeRwBCCQcKzhSSEBCERh0faHjJamCEAgTZGF3SQIQCBJlBFJNEUAAmmKLOwmQQACSaKMSKIpAhBIU2RTsZt5HhBI5hMA6Y8nAIGM54OzmROAQDKfAEh/PAEIZDwfnM2cAASS+QSImb4G3xCIhiohxmgEIJBo6OFYAwEIREOVEGM0AhBINPRwrIFAsgLpPf7G27vLC/dvLC9e6i61X+guty1WjwyYacl2ZfG+7sqb5oVNdm/hJCWQa0sLJzeWFr7dXWr/1RbHXjCmeIwMnTNkbvdGDIb6BJhpydbSj4098iKL5S+8ftN9MPU7pLFNQiD2qfm57vLiV7apWCcqHjBkTqdRHj1ZsFju4PVB98HUXWl/UU/k4yMtxp+Wf7a7dOru3tVjzxtDDxu8ZBCw5kvdpcX1ayuL75URUP0o1ArEXTU2lto/N3ToSUN0W30EGNkIAaKT25ae5iv7DxuxH8ioSoHY5flb+KrxLJH5SCBOcFObAH1qY7n9jP3Zra3aJiIO3C+QiMFM49r+5NSxnj3+a75qvG2a/ugTnwAZc6Z7uPUraw0fxo+nSgTqBNI7Uiwx5ndUSRJ94xMgQ3ddW2l/NX4k1SJQJZDe8uKDhuhD1VJEbykErDEPdR9ffL+UeKaJQ41ANp449QZr6JFpkkIfwQQKetQ+YY4IjnBXaGoEYm4UX+fIj/KKRTeB+d7mwkNaUggqkLpQrl9qnyZj7q07HuNkEbCWLrgvW2RFNToaFQLZKuwFfvZQEetozGgdJkBEr+sdLe4bbpN6LH7S7dyvnpcKEHHVJUD31x0Zcpx4gfRunHofXz3mQkKBryAE3t69dFL8b0CIF4il4kyQcsFJcALFoUL872oVwalUdMgP5++cYgi6KCSwZUn8D3zFC4R/9vFmhbVHyFMQIDJ3TNEtahfxAuEryC1RCcF5YwT4696Fxox7MixaIPaiER2fpxrkbEb8X3qKnoB00WznPHtSz51vsV4rPUfRApEBD1HkTAACybn6yH0iAQhkIiJ0yJkABJJz9ZH7RAIQyERE6JAzAQgkZvXhWzwBCER8iRBgTAIQSEz68C2eAAQivkQIMCYBCOQA+q3OKuW0HoAh+2YIJNEpgLT8EIBA/HCElUQJQCCJFhZp+SEAgfjhCCuJEoBAEi0s0vJDAALxwzEnK1nlCoFkVW4kW5UABFKVGPpnRQACyarcSLYqAQikKjH0z4oABJJVuaUnKy8+CEReTRCRIAIQiKBiIBR5BCAQeTVBRIIIQCCCioFQ5BGAQOTVBBE1QaCmTQikJjgMy4MABJJHnZFlTQIQSE1wGJYHAQjkgDp3l9s2p/UADNk3QyDZTwEAGEdgGoGMG49zIJA0AQgk6fIiuVkJQCCzEsT4pAlAIEmXF8nNSgACmZUgxidNILJAkmaL5BIgAIEkUESk0BwBCKQ5trCcAAEIJIEiIoXmCEAgzbGF5QQIpCuQBIqDFOITgEDi1wARCCYAgQguTtzQrDHW8rJ7zw289Nvt0Pm4sTbnHQJpjq1Ky27SszLKxRgq/w3vB8f9M/2tKV990ZSHCW0gkISKOVMqfDXgS0NfEJbYlFt5N9XCfXkM8ehSYM7WVOPkd4JAatQouSGvTmiaOTVikZRGXrVZvlO7gUDUls5X4PyMUZqicutnQ8ZZLa8mfgxGswKBREMvwDF/yvPCgfgUB5vjhfhKQsQHfQd8oHOBQA6oW6uzSpLXA8Kevnln4hJP5OkHVezJzyXliB1f5bGyDQSirGB+wyW/5kZaC+FjpGMvjRCIF4zejIQxxJ/ooaet1ucRCCTMlJTlhdVhm7y12pctmfJ5ZF+7/AYIRH6NPEdod34I6NnsJHPsNo7jSYGNPw+BjOeT3tlyolKEvNhn6TuC6xlcQiAzwFM5lOdptLhj+q6ZNARSE5y+Yf2I+fm8fxBhG9N33XQhkLrklI6L+bAc03fdckEgdclpHRfzOSCm75r1gkBqgsOwPAhAIHnU+WaWMR+UY/q+SaDSEQRSCZf+zo08KE+JJabvKUPc1w0C2Yck7YaYD8oxfdetKgRSl5zWcREflHEF0Tppcoq7fA6IoRJrStfKWOMKoqxgs4fL05SX2e1UtOB8KrzHgkAq1jmd7jZgKu5/PKnnLvYoCCR2BaL4549zXkK6Jgrs0FNyEIgnkOrMuAsIuU3TkbMPndoowUAgJYb9m+5y20pe90dcscV9ovPcDfM3GnoVAoFUnFdJdWeR9P9fhVIpnlPbsck+PBsOag4CCYpbnjNyX766SezzdsvZKm3Ky3cooqkOIZCpMGXQqfzA542b3DXT5e+qjHHj2YxJ5AWBJFLImdMoP/Fp55HEzXC3TmvV9bXuWsQD2IazxUcpLBBIClX0mYOb3OXqtOKuCTdX1+JW1zK8L92XY1gc5Zt0NhBIOrX0nAkZot0rNxi3EtGuvWszib4gkEQLi7T8EKgnED++YQUExBOAQMSXCAHGJCBfINbciAkIvhsl8L9GrXswLl4g/I3Jhoc8YUIgAWvMVYFh7QpJvECMoZcMXkkSIGNflJ6YOIHsBcbfKF7e24b3aRCwlp6Tnol4gRhr/iAdIuKrS2D793VHhhonXiAFbf0uFAz4CUuACvpNWI/VvYkXyLHb1p/lh7mXq6eGEaIJWPuP1r1ruILMWiR6t9nk26yfzmoH44URIPsjYRGNDEf8FcRFTdub3+D9Jq+zLBgrhoC9NneYvicmnDGBqBBI62N/f8lYi6vImEJqOkXWfIfuWfuPhphVCMSBnKPrX2CR9NwxVr0E+HnyyvHXvPJlLRmoEQh1/nmFf7D0eS1gEedoAmTMJ+iel9X8doQagTjcc2f/xvet9pfuGKs+AtbYb7U6q09qilyVQBzYuf9un2PQf3THclZEMomAtfbp1uW1C5P6STuvTiD08fXrrU26i4H/SRpMxDOagLXmmdZW94N00WyP7iG3VZ1AHEo6v/rv1omr7zLGPuXeYxVN4Lsnzq6+h87/qys6ygOCUykQlwvdfeWVVmftA4W1fMtlrrg2rHII8G3w5cJsneFnjgfkRFU9ErUCGaR6/OzaUmub2vwV8PcHbdhHJGBtj8Xx8InO2p3HO+u/jRiJF9fqBeIo0Lnnr7bOrn32sNl6C992PcpiSedvSFyCClZrzJ/JmK/NbdECi+MRBSFPFWISAhlkerSz/hzfdn2axTJ/qLB3slA+w4L5BRcPv+w4gORvv8qmHnO3uHOb5tYTndW3znVWP+eeD7k9mSUpgQxX5dhH1y6zUH7Q6qx9mIv3er4XJqyrPhmcZp6fdLe4qYlieB4lK5DhJHEMAnUJQCB1yWFcFgQgkCzKPDpJtE4mAIFMZoQeGROAQDIuPlKfTAACmcwIPTImAIFkXHykPpkABDKZEXpUJ5DMCAgkmVIikSYIQCBNUIXNZAhAIMmUEok0QQACaYIqbCZDAAJJppS5JBI2TwgkLG94U0YAAlFWMIQblgAEEpY3vCkjAIEoKxjCDUsAAgnLG94kExgRGwQyAgqaQGBAAAIZkMAeBEYQgEBGQEETCAwIQCADEtiDwAgCEMgIKGgCgQEBXwIZ2MMeBJIiAIEkVU4k45sABOKbKOwlRQACSaqcSMY3AQjEN1HYS4qAAoEkxRvJKCMAgSgrGMINSwACCcsb3pQRgECUFQzhhiUAgYTlDW/KCOQtEGXFQrjhCUAg4ZnDoyICEIiiYiHU8AQgkPDM4VERAQhEUbEQangCEEhDzGE2DQL/BwAA//8AILmRAAAABklEQVQDAGC+rc28+DPeAAAAAElFTkSuQmCC"/>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">BandhanAI</h1>
+<p class="font-body-sm text-on-surface-variant/60 text-center">AI-powered CRM for modern commerce</p>
+</div>
+<!-- Authentication Card -->
+<div class="w-full bg-surface-container border border-outline p-stack-lg shadow-sm">
+<div class="mb-stack-md">
+<h2 class="font-headline-md text-headline-md mb-1">Sign in</h2>
+<p class="font-body-sm text-on-surface-variant">Enter your credentials to access your workspace.</p>
+</div><button class="w-full flex items-center justify-center gap-3 border border-outline bg-surface-container-lowest py-3 mb-stack-md hover:bg-surface-variant transition-colors duration-200">
+<svg height="20" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.66l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+<span class="font-body-base font-medium">Continue with Google</span>
+</button>
+<div class="flex items-center gap-stack-md mb-stack-md text-on-surface-variant/40">
+<div class="h-px bg-outline flex-1"></div>
+<span class="font-label-caps text-[10px] uppercase">or</span>
+<div class="h-px bg-outline flex-1"></div>
+</div>
+<form action="#" class="flex flex-col gap-stack-md" onsubmit="event.preventDefault();">
+<!-- Email Field -->
+<div class="flex flex-col gap-unit">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase" for="email">Email Address</label>
+<div class="relative group">
+<input class="w-full bg-surface-container-lowest border border-outline px-stack-md py-3 font-body-base text-on-background focus:border-primary transition-all duration-200" id="email" name="email" placeholder="name@company.com" required="" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col gap-unit">
+<div class="flex justify-between items-center">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase" for="password">Password</label>
+<a class="font-label-caps text-[10px] text-on-surface-variant/60 hover:text-primary transition-colors" href="#">Forgot?</a>
+</div>
+<div class="relative group">
+<input class="w-full bg-surface-container-lowest border border-outline px-stack-md py-3 font-body-base text-on-background focus:border-primary transition-all duration-200" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+</div>
+</div>
+<!-- Action Button -->
+<button class="mt-stack-sm bg-primary text-on-primary font-headline-md text-headline-md py-3 hover:opacity-90 active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2" type="submit">
+                    Login
+                    <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</form>
+<!-- Bottom Link -->
+<div class="mt-stack-lg pt-stack-md border-t border-outline flex justify-center">
+<p class="font-body-sm text-on-surface-variant">
+                    Don't have an account? 
+                    <a class="text-primary font-medium hover:underline ml-1" href="#">Create an account</a>
+</p>
+</div>
+</div>
+<!-- Footer / Technical Meta -->
+<footer class="mt-stack-lg flex flex-col items-center gap-unit">
+<span class="font-data-mono text-data-mono text-[#3F3F46] uppercase">v2.4.0-stable</span>
+<div class="flex gap-stack-md">
+<a class="font-data-mono text-data-mono text-on-surface-variant/40 hover:text-on-surface-variant transition-colors" href="#">Privacy</a>
+<a class="font-data-mono text-data-mono text-on-surface-variant/40 hover:text-on-surface-variant transition-colors" href="#">Terms</a>
+<a class="font-data-mono text-data-mono text-on-surface-variant/40 hover:text-on-surface-variant transition-colors" href="#">Status</a>
+</div>
+</footer>
+</main>
+<script>
+        // Simple micro-interaction for button feedback
+        const loginBtn = document.querySelector('button[type="submit"]');
+        loginBtn.addEventListener('click', () => {
+            const originalContent = loginBtn.innerHTML;
+            loginBtn.innerHTML = `
+                <span class="flex items-center gap-2">
+                    <svg class="animate-spin h-5 w-5 text-on-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Authenticating...
+                </span>
+            `;
+            setTimeout(() => {
+                loginBtn.innerHTML = originalContent;
+            }, 2000);
+        });
+    </script>
+</body></html>

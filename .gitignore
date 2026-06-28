@@ -1,15 +1,8 @@
-# Python-generated files
-__pycache__/
-*.py[oc]
-build/
-dist/
-wheels/
-*.egg-info
-
-# Virtual environments
-.venv
-
-
+backend/.env 
+# Environment files
 .env
+frontend/.env
 
-mcp_config.json
+
+# Google OAuth credentials
+frontend/client_secret*.json
